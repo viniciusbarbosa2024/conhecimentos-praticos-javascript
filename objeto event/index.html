@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #conteiner {
+            width: 200px;
+            height: 200px;
+
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div id="conteiner">
+
+    </div>
+    
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event" target="_blank">Clique aqui</a>
+
+<script>
+    const conteiner = document.getElementById('conteiner')
+    const link = document.getElementsByTagName('a')[0]
+
+    //Função para mudar a cor do conteiner
+    conteiner.addEventListener('click', function(e) {
+        e.target.style.backgroundColor = 'red'
+
+        e.target.innerHTML = e.type
+    })
+
+    //Função para impedir o link de ser aberto
+    
+        //Com função anônima
+
+        // link.addEventListener('click',function(e){
+        //     e.preventDefault()
+        //     alert('Cancelei o comportamento padrão do link via preventDefault')
+        // })
+
+        //Com função nomeada
+        link.addEventListener('click',cancelarComportamento)
+
+        function cancelarComportamento(e) {
+            e.preventDefault()
+            alert('Cancelei o comportamento padrão do link via preventDefault')
+    }
+
+</script>
+</body>
+</html>
